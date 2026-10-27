@@ -135,11 +135,12 @@ h1 {
 .input-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  min-height: 68px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 0 12px;
+  border-radius: 14px;
+  padding: 0 16px;
 }
 
 input {
@@ -148,8 +149,9 @@ input {
   border: none;
   outline: none;
   color: var(--text);
-  font-size: 1.05rem;
-  padding: 16px 0;
+  font-size: 1.35rem;
+  line-height: 1.4;
+  padding: 18px 0;
   font-family: inherit;
 }
 
@@ -172,15 +174,15 @@ input::placeholder {
 .time-box {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 10px 10px 8px;
+  border-radius: 14px;
+  padding: 12px 12px 10px;
 }
 
 .time-box label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 600;
 }
 
@@ -336,9 +338,13 @@ input::placeholder {
     min-width: 0;
   }
 
+  .input-row {
+    min-height: 62px;
+  }
+
   input {
-    font-size: 0.98rem;
-    padding: 14px 0;
+    font-size: 1.15rem;
+    padding: 16px 0;
   }
 
   .result-card {
