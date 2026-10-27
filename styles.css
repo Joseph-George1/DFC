@@ -38,117 +38,8 @@ input {
   padding: 28px;
 }
 
-.dashboard {
-  width: min(1400px, 100%);
-  display: flex;
-  align-items: stretch;
-  gap: 24px;
-}
-
-.sidebar {
-  width: 290px;
-  padding: 24px 18px;
-  background: rgba(13, 17, 23, 0.9);
-  border: 1px solid var(--panel-border);
-  border-radius: 24px;
-  box-shadow: 0 30px 60px var(--shadow);
-}
-
-.brand-lockup {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 18px;
-  padding: 12px 16px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(255, 154, 61, 0.15), rgba(255, 125, 31, 0.04));
-  border: 1px solid rgba(255, 154, 61, 0.28);
-}
-
-.brand-word {
-  font-size: clamp(2rem, 2vw, 2.6rem);
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  color: var(--orange);
-  text-transform: uppercase;
-}
-
-.side-panel {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 18px;
-  padding: 18px 14px;
-}
-
-.eyebrow {
-  margin: 0 0 14px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--orange);
-}
-
-.package-nav {
-  display: grid;
-  gap: 10px;
-}
-
-.package-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
-  color: var(--text);
-  padding: 12px 14px;
-  border-radius: 12px;
-  text-align: left;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.package-item.active {
-  background: linear-gradient(135deg, rgba(255, 154, 61, 0.18), rgba(255, 125, 31, 0.08));
-  border-color: rgba(255, 154, 61, 0.4);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
-}
-
-.package-number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--orange), var(--orange-strong));
-  color: #1a120d;
-  font-weight: 800;
-}
-
-.package-text {
-  font-weight: 700;
-}
-
-.ghost-btn,
-.mini-btn {
-  border: 1px solid rgba(255, 154, 61, 0.25);
-  background: rgba(255, 154, 61, 0.06);
-  color: var(--text);
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.ghost-btn {
-  width: 100%;
-  margin-top: 12px;
-  padding: 11px 12px;
-  font-weight: 700;
-}
-
 .calculator-card {
-  flex: 1;
+  width: min(100%, 980px);
   background: rgba(10, 13, 18, 0.9);
   border: 1px solid var(--panel-border);
   border-radius: 28px;
@@ -157,14 +48,48 @@ input {
   backdrop-filter: blur(20px);
 }
 
+.brand-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.brand-lockup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255, 154, 61, 0.15), rgba(255, 125, 31, 0.04));
+  border: 1px solid rgba(255, 154, 61, 0.28);
+}
+
+.brand-word {
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: var(--orange);
+  text-transform: uppercase;
+}
+
 .title-wrap {
   text-align: center;
   margin-bottom: 22px;
 }
 
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
 h1 {
   margin: 0;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   letter-spacing: -0.05em;
 }
 
@@ -193,24 +118,6 @@ h1 {
   margin-bottom: 18px;
   color: var(--muted);
   font-weight: 600;
-}
-
-.bulk-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
-.bulk-header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.mini-btn {
-  padding: 8px 12px;
-  font-weight: 700;
 }
 
 .dot {
@@ -243,6 +150,7 @@ input {
   color: var(--text);
   font-size: 1.05rem;
   padding: 16px 0;
+  font-family: inherit;
 }
 
 input::placeholder {
@@ -274,82 +182,6 @@ input::placeholder {
   color: var(--muted);
   font-size: 0.8rem;
   font-weight: 600;
-}
-
-.package-panel {
-  margin-top: 22px;
-}
-
-.quantity-row {
-  margin-top: 14px;
-  margin-bottom: 14px;
-}
-
-.quantity-row label {
-  display: block;
-  margin-bottom: 8px;
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.range-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
-  gap: 10px;
-}
-
-.range-tab {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  border: 1px solid rgba(255, 154, 61, 0.2);
-  background: rgba(255, 154, 61, 0.06);
-  color: var(--text);
-  border-radius: 12px;
-  padding: 12px 14px;
-  cursor: pointer;
-  text-align: left;
-  transition: all 0.2s ease;
-}
-
-.range-tab.active {
-  background: linear-gradient(135deg, var(--orange), var(--orange-strong));
-  color: #1b130d;
-  border-color: transparent;
-  box-shadow: 0 10px 22px rgba(255, 125, 31, 0.22);
-}
-
-.range-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.18);
-  font-size: 0.75rem;
-  font-weight: 800;
-}
-
-.range-tab small {
-  opacity: 0.9;
-}
-
-.package-summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 16px;
-  color: var(--muted);
-}
-
-.package-summary strong {
-  color: var(--orange);
-  font-size: 1.08rem;
 }
 
 #calculateBtn {
@@ -406,7 +238,7 @@ input::placeholder {
 
 .total-wrap h2 {
   margin: 0;
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: clamp(2.4rem, 5vw, 4rem);
   letter-spacing: -0.06em;
   color: var(--orange);
 }
@@ -450,17 +282,9 @@ input::placeholder {
   font-size: 1.08rem;
 }
 
-@media (max-width: 980px) {
-  .dashboard {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-  }
-
-  .package-nav {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+@media (max-width: 900px) {
+  .calculator-card {
+    width: min(100%, 760px);
   }
 
   .inputs-grid {
@@ -473,22 +297,56 @@ input::placeholder {
     padding: 16px;
   }
 
-  .sidebar,
   .calculator-card {
+    padding: 18px 14px 18px;
     border-radius: 22px;
   }
 
-  .calculator-card {
-    padding: 18px 14px 18px;
+  .brand-lockup {
+    padding: 8px 18px;
   }
 
-  .range-list {
+  .brand-word {
+    letter-spacing: 0.1em;
+  }
+
+  .title-wrap {
+    margin-bottom: 18px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.16em;
+  }
+
+  .panel {
+    padding: 14px 12px 12px;
+  }
+
+  .panel-header {
+    margin-bottom: 12px;
+  }
+
+  .time-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 
-  .package-summary,
-  .breakdown-row,
-  .result-topline {
+  .input-row,
+  .time-box {
+    min-width: 0;
+  }
+
+  input {
+    font-size: 0.98rem;
+    padding: 14px 0;
+  }
+
+  .result-card {
+    padding: 18px 14px 16px;
+  }
+
+  .result-topline,
+  .breakdown-row {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
@@ -496,9 +354,14 @@ input::placeholder {
 
   .total-wrap {
     align-items: flex-end;
+    gap: 4px;
   }
 
   .total-wrap h2 {
     font-size: 2.2rem;
+  }
+
+  #calculateBtn {
+    padding: 14px 18px;
   }
 }
