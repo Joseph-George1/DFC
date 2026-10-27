@@ -68,6 +68,38 @@
           </section>
         </div>
 
+        <section class="panel package-panel" aria-labelledby="bulkTitle">
+          <div class="panel-header">
+            <span class="dot dot-orange"></span>
+            <label id="bulkTitle">Bulk Order</label>
+          </div>
+
+          <div class="package-tabs" role="tablist" aria-label="Bulk package options">
+            <button class="package-tab active" type="button" data-package="starter">Package 1</button>
+            <button class="package-tab" type="button" data-package="pro">Package 2</button>
+            <button class="package-tab" type="button" data-package="elite">Package 3</button>
+          </div>
+
+          <div class="quantity-row">
+            <label for="pieces">Pieces</label>
+            <div class="input-row">
+              <input id="pieces" type="number" min="0" step="1" value="25" />
+              <span class="suffix">pcs</span>
+            </div>
+          </div>
+
+          <div class="range-tabs" role="tablist" aria-label="Bulk quantity ranges">
+            <button class="range-tab active" type="button" data-range="0-50">0-50</button>
+            <button class="range-tab" type="button" data-range="50-100">50-100</button>
+            <button class="range-tab" type="button" data-range="100-200">100-200</button>
+          </div>
+
+          <div class="package-summary">
+            <span id="packageName">Package 1</span>
+            <strong id="packageRateDisplay">3.50 EP / piece</strong>
+          </div>
+        </section>
+
         <button id="calculateBtn" type="button">Calculate Total</button>
 
         <div class="result-card">
@@ -89,6 +121,10 @@
             <div class="breakdown-row">
               <span>Time Cost</span>
               <strong id="timeCost">0.00 EP</strong>
+            </div>
+            <div class="breakdown-row">
+              <span>Bulk Package</span>
+              <strong id="packageCost">0.00 EP</strong>
             </div>
             <div class="breakdown-row total-row">
               <span>Total</span>
