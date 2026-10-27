@@ -11,127 +11,128 @@
   </head>
   <body>
     <div class="page-shell">
-      <div class="calculator-card">
-        <header class="brand-header">
+      <div class="dashboard">
+        <aside class="sidebar">
           <div class="brand-lockup">
             <span class="brand-word">DFC</span>
           </div>
-        </header>
 
-        <div class="title-wrap">
-          <p class="eyebrow">Filimint</p>
-          <h1>Cost Calculator</h1>
-        </div>
+          <div class="side-panel">
+            <p class="eyebrow">Bulk Pricing</p>
+            <nav id="packageNav" class="package-nav" aria-label="Package navigation"></nav>
+            <button id="addPackageBtn" class="ghost-btn" type="button">+ Add Package</button>
+          </div>
+        </aside>
 
-        <div class="inputs-grid">
-          <section class="panel">
-            <div class="panel-header">
-              <span class="dot dot-orange"></span>
-              <label for="grams">Grams</label>
+        <main class="calculator-card">
+          <div class="title-wrap">
+            <p class="eyebrow">Filimint</p>
+            <h1>Cost Calculator</h1>
+          </div>
+
+          <div class="inputs-grid">
+            <section class="panel">
+              <div class="panel-header">
+                <span class="dot dot-orange"></span>
+                <label for="grams">Grams</label>
+              </div>
+              <div class="input-row">
+                <input id="grams" type="number" min="0" step="0.1" value="0" placeholder="0" />
+                <span class="suffix">g</span>
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <span class="dot dot-orange"></span>
+                <label>Time</label>
+              </div>
+              <div class="time-grid">
+                <div class="time-box">
+                  <label for="days">Days</label>
+                  <input id="days" type="number" min="0" step="1" value="0" />
+                </div>
+                <div class="time-box">
+                  <label for="hours">Hours</label>
+                  <input id="hours" type="number" min="0" step="1" value="0" />
+                </div>
+                <div class="time-box">
+                  <label for="minutes">Minutes</label>
+                  <input id="minutes" type="number" min="0" max="59" step="1" value="0" />
+                </div>
+              </div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-header">
+                <span class="dot dot-orange"></span>
+                <label for="rate">Hourly Rate</label>
+              </div>
+              <div class="input-row">
+                <input id="rate" type="number" min="0" step="1" value="100" placeholder="100" />
+                <span class="suffix">EP/hr</span>
+              </div>
+            </section>
+          </div>
+
+          <section class="panel package-panel" aria-labelledby="bulkTitle">
+            <div class="panel-header bulk-header-row">
+              <div class="bulk-header-left">
+                <span class="dot dot-orange"></span>
+                <label id="bulkTitle">Bulk Order</label>
+              </div>
+              <button id="addBulkBtn" class="mini-btn" type="button">+ Add Bulk</button>
             </div>
-            <div class="input-row">
-              <input id="grams" type="number" min="0" step="0.1" value="0" placeholder="0" />
-              <span class="suffix">g</span>
+
+            <div class="quantity-row">
+              <label for="pieces">Pieces</label>
+              <div class="input-row">
+                <input id="pieces" type="number" min="0" step="1" value="25" />
+                <span class="suffix">pcs</span>
+              </div>
+            </div>
+
+            <div id="bulkRangeList" class="range-list" role="tablist" aria-label="Bulk quantity ranges"></div>
+
+            <div class="package-summary">
+              <span id="packageName">Package 1</span>
+              <strong id="packageRateDisplay">3.50 EP / piece</strong>
             </div>
           </section>
 
-          <section class="panel">
-            <div class="panel-header">
-              <span class="dot dot-orange"></span>
-              <label>Time</label>
+          <button id="calculateBtn" type="button">Calculate Total</button>
+
+          <div class="result-card">
+            <div class="result-topline">
+              <span>Final Cost</span>
+              <span id="statusBadge">Live</span>
             </div>
-            <div class="time-grid">
-              <div class="time-box">
-                <label for="days">Days</label>
-                <input id="days" type="number" min="0" step="1" value="0" />
+
+            <div class="total-wrap">
+              <h2 id="totalCost">0.00</h2>
+              <span class="currency">EP</span>
+            </div>
+
+            <div class="breakdown">
+              <div class="breakdown-row">
+                <span>Grams Cost</span>
+                <strong id="gramsCost">0.00 EP</strong>
               </div>
-              <div class="time-box">
-                <label for="hours">Hours</label>
-                <input id="hours" type="number" min="0" step="1" value="0" />
+              <div class="breakdown-row">
+                <span>Time Cost</span>
+                <strong id="timeCost">0.00 EP</strong>
               </div>
-              <div class="time-box">
-                <label for="minutes">Minutes</label>
-                <input id="minutes" type="number" min="0" max="59" step="1" value="0" />
+              <div class="breakdown-row">
+                <span>Bulk Package</span>
+                <strong id="packageCost">0.00 EP</strong>
+              </div>
+              <div class="breakdown-row total-row">
+                <span>Total</span>
+                <strong id="totalCostRow">0.00 EP</strong>
               </div>
             </div>
-          </section>
-
-          <section class="panel">
-            <div class="panel-header">
-              <span class="dot dot-orange"></span>
-              <label for="rate">Hourly Rate</label>
-            </div>
-            <div class="input-row">
-              <input id="rate" type="number" min="0" step="1" value="100" placeholder="100" />
-              <span class="suffix">EP/hr</span>
-            </div>
-          </section>
-        </div>
-
-        <section class="panel package-panel" aria-labelledby="bulkTitle">
-          <div class="panel-header">
-            <span class="dot dot-orange"></span>
-            <label id="bulkTitle">Bulk Order</label>
           </div>
-
-          <div class="package-tabs" role="tablist" aria-label="Bulk package options">
-            <button class="package-tab active" type="button" data-package="starter">Package 1</button>
-            <button class="package-tab" type="button" data-package="pro">Package 2</button>
-            <button class="package-tab" type="button" data-package="elite">Package 3</button>
-          </div>
-
-          <div class="quantity-row">
-            <label for="pieces">Pieces</label>
-            <div class="input-row">
-              <input id="pieces" type="number" min="0" step="1" value="25" />
-              <span class="suffix">pcs</span>
-            </div>
-          </div>
-
-          <div class="range-tabs" role="tablist" aria-label="Bulk quantity ranges">
-            <button class="range-tab active" type="button" data-range="0-50">0-50</button>
-            <button class="range-tab" type="button" data-range="50-100">50-100</button>
-            <button class="range-tab" type="button" data-range="100-200">100-200</button>
-          </div>
-
-          <div class="package-summary">
-            <span id="packageName">Package 1</span>
-            <strong id="packageRateDisplay">3.50 EP / piece</strong>
-          </div>
-        </section>
-
-        <button id="calculateBtn" type="button">Calculate Total</button>
-
-        <div class="result-card">
-          <div class="result-topline">
-            <span>Final Cost</span>
-            <span id="statusBadge">Live</span>
-          </div>
-
-          <div class="total-wrap">
-            <h2 id="totalCost">0.00</h2>
-            <span class="currency">EP</span>
-          </div>
-
-          <div class="breakdown">
-            <div class="breakdown-row">
-              <span>Grams Cost</span>
-              <strong id="gramsCost">0.00 EP</strong>
-            </div>
-            <div class="breakdown-row">
-              <span>Time Cost</span>
-              <strong id="timeCost">0.00 EP</strong>
-            </div>
-            <div class="breakdown-row">
-              <span>Bulk Package</span>
-              <strong id="packageCost">0.00 EP</strong>
-            </div>
-            <div class="breakdown-row total-row">
-              <span>Total</span>
-              <strong id="totalCostRow">0.00 EP</strong>
-            </div>
-          </div>
-        </div>
+        </main>
       </div>
     </div>
 
