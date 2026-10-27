@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DFC Filimint Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="calculator-card">
+        <header class="brand-header">
+          <div class="brand-lockup">
+            <span class="brand-word">DFC</span>
+          </div>
+        </header>
+
+        <div class="title-wrap">
+          <p class="eyebrow">Filimint</p>
+          <h1>Cost Calculator</h1>
+        </div>
+
+        <div class="inputs-grid">
+          <section class="panel">
+            <div class="panel-header">
+              <span class="dot dot-orange"></span>
+              <label for="grams">Grams</label>
+            </div>
+            <div class="input-row">
+              <input id="grams" type="number" min="0" step="0.1" value="0" placeholder="0" />
+              <span class="suffix">g</span>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <span class="dot dot-orange"></span>
+              <label>Time</label>
+            </div>
+            <div class="time-grid">
+              <div class="time-box">
+                <label for="days">Days</label>
+                <input id="days" type="number" min="0" step="1" value="0" />
+              </div>
+              <div class="time-box">
+                <label for="hours">Hours</label>
+                <input id="hours" type="number" min="0" step="1" value="0" />
+              </div>
+              <div class="time-box">
+                <label for="minutes">Minutes</label>
+                <input id="minutes" type="number" min="0" max="59" step="1" value="0" />
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <span class="dot dot-orange"></span>
+              <label for="rate">Hourly Rate</label>
+            </div>
+            <div class="input-row">
+              <input id="rate" type="number" min="0" step="1" value="100" placeholder="100" />
+              <span class="suffix">EP/hr</span>
+            </div>
+          </section>
+        </div>
+
+        <button id="calculateBtn" type="button">Calculate Total</button>
+
+        <div class="result-card">
+          <div class="result-topline">
+            <span>Final Cost</span>
+            <span id="statusBadge">Live</span>
+          </div>
+
+          <div class="total-wrap">
+            <h2 id="totalCost">0.00</h2>
+            <span class="currency">EP</span>
+          </div>
+
+          <div class="breakdown">
+            <div class="breakdown-row">
+              <span>Grams Cost</span>
+              <strong id="gramsCost">0.00 EP</strong>
+            </div>
+            <div class="breakdown-row">
+              <span>Time Cost</span>
+              <strong id="timeCost">0.00 EP</strong>
+            </div>
+            <div class="breakdown-row total-row">
+              <span>Total</span>
+              <strong id="totalCostRow">0.00 EP</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
