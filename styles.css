@@ -19,6 +19,7 @@
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
   font-family: "Inter", sans-serif;
   background:
     radial-gradient(circle at top, rgba(255, 154, 61, 0.18), transparent 30%),
@@ -31,6 +32,11 @@ body {
   display: grid;
   place-items: center;
   padding: 28px;
+}
+
+input,
+button {
+  font: inherit;
 }
 
 .calculator-card {
@@ -277,16 +283,86 @@ input::placeholder {
   font-size: 1.08rem;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .calculator-card {
-    padding: 20px 16px 22px;
+    width: min(100%, 760px);
   }
 
   .inputs-grid {
     grid-template-columns: 1fr;
   }
+}
+
+@media (max-width: 560px) {
+  .page-shell {
+    padding: 16px;
+  }
+
+  .calculator-card {
+    padding: 18px 14px 18px;
+    border-radius: 22px;
+  }
+
+  .brand-lockup {
+    padding: 8px 18px;
+  }
+
+  .brand-word {
+    letter-spacing: 0.1em;
+  }
+
+  .title-wrap {
+    margin-bottom: 18px;
+  }
+
+  .eyebrow {
+    letter-spacing: 0.16em;
+  }
+
+  .panel {
+    padding: 14px 12px 12px;
+  }
+
+  .panel-header {
+    margin-bottom: 12px;
+  }
 
   .time-grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .input-row,
+  .time-box {
+    min-width: 0;
+  }
+
+  input {
+    font-size: 0.98rem;
+    padding: 14px 0;
+  }
+
+  .result-card {
+    padding: 18px 14px 16px;
+  }
+
+  .result-topline,
+  .breakdown-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .total-wrap {
+    align-items: flex-end;
+    gap: 4px;
+  }
+
+  .total-wrap h2 {
+    font-size: 2.2rem;
+  }
+
+  #calculateBtn {
+    padding: 14px 18px;
   }
 }
